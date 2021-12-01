@@ -1,0 +1,51 @@
+.comment {
+  margin-top: 3em;
+  width: 95vw;
+  display: flex;
+  flex-direction: column;
+  font-family: Fira Sans, sans-serif;
+}
+.comment textarea {
+  margin: 1em 0;
+  height: 6em;
+  border-radius: 3px;
+  border: 2px solid #deba3b;
+  border-color: #deba3b;
+  font-size: 1.3em;
+}
+.comment textarea:focus {
+  outline: none !important;
+  border: 1px solid #deba3b;
+}
+.comment .commentButton {
+  width: 120px;
+  align-self: flex-end;
+  margin-bottom: 5em;
+  border-radius: 25px;
+  height: 3em;
+  font-size: 0.8em;
+  border: none !important;
+  background: #deba3b;
+  color: #454444;
+  font-family: Fira Sans, sans-serif;
+  -webkit-box-shadow: 4px 4px 5px 0px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow: 4px 4px 5px 0px rgba(50, 50, 50, 0.75);
+  box-shadow: 4px 4px 5px 0px rgba(50, 50, 50, 0.75);
+  transition: all 0.2s ease-in-out;
+}
+.comment .commentButton:hover {
+  transform: scale(1.1);
+}
+
+.commentBox {
+  resize: none;
+}
+.deleteBox {
+  color: #454444;
+}
+.deleteIcon {
+  color: #454444;
+}
+.MuiButton-label {
+  color: #454444;
+}

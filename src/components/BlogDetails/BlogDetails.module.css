@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.title {
+  margin: 1.5em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.blogContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 98.92vw;
+  height: 100vh;
+  font-family: Fira Sans, sans-serif;
+  color: #454444;
+}
+.blogImage {
+  width: 50%;
+  height: 60vh;
+  border-radius: 5px;
+  object-fit: cover;
+  -webkit-box-shadow: 4px 4px 5px 0px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow: 4px 4px 5px 0px rgba(50, 50, 50, 0.75);
+  box-shadow: 4px 4px 5px 0px rgba(50, 50, 50, 0.75);
+}
+.content {
+  margin-top: 5em;
+  width: 80%;
+  font-size: 1.3em;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
