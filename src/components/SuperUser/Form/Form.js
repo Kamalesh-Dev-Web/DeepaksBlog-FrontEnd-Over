@@ -9,7 +9,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { addPost, updatingPost } from "../../../actions/post.js";
 
-
 const Form = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
@@ -29,8 +28,6 @@ const Form = () => {
       ? state.posts.posts.find((message) => message._id === currentId)
       : null
   );
-
- 
 
   useEffect(() => {
     if (post) setPostData(post);

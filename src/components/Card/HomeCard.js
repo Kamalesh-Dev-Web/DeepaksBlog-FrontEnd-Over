@@ -39,10 +39,10 @@ const HomeCard = ({ post }) => {
   };
 
   const likeSinglePost = async () => {
-    const received = await dispatch(likePost(posts._id));
+    await dispatch(likePost(posts._id));
     setCurrentPostId(posts._id);
 
-    console.log(received);
+    // console.log(received);
   };
   return (
     <Card className={classes.root}>
@@ -116,7 +116,7 @@ const HomeCard = ({ post }) => {
             <DeleteIcon fontSize="small" /> &nbsp; Delete
           </Button>
           <Button onClick={likeSinglePost}>
-            <ThumbUpAltIcon fontSize="small" /> &nbsp; {posts.likes.length}{" "}
+            <ThumbUpAltIcon fontSize="small" /> &nbsp; {posts.likes?.length}{" "}
             likes
           </Button>
           {/* <div className={classes.like}>

@@ -93,7 +93,9 @@ export const updateComment = (postId, commentId, value) => async (dispatch) => {
 export const likePost = (postId) => async (dispatch) => {
   try {
     const { data } = await api.likePost(postId);
-    return data;
+    dispatch({ type: "LIKE", payload: data });
+    console.log(data);
+    // return data;
   } catch (error) {
     console.log(error.message);
   }

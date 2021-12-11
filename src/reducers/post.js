@@ -27,7 +27,6 @@ export default (state = { posts: [] }, action) => {
         posts: state.posts.filter((post) => post._id !== action.payload),
       };
     }
-
     case "COMMENT": {
       console.log(action.payload);
       return {
@@ -40,6 +39,17 @@ export default (state = { posts: [] }, action) => {
         }),
       };
     }
+    // case "LIKE": {
+    //   console.log(action.payload);
+    //   //  return {
+    //   //    ...state,
+    //   //    posts: state.posts.map((post) =>
+    //   //      post._id === action.payload._id ? action.payload : post
+    //   //    ),
+    //   //  };
+    //   // return (state.posts:...state.posts, action.payload);
+    //   break;
+    // }
     default:
       return state;
   }
