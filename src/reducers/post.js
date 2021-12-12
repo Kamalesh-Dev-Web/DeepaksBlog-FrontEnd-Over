@@ -39,17 +39,16 @@ export default (state = { posts: [] }, action) => {
         }),
       };
     }
-    // case "LIKE": {
-    //   console.log(action.payload);
-    //   //  return {
-    //   //    ...state,
-    //   //    posts: state.posts.map((post) =>
-    //   //      post._id === action.payload._id ? action.payload : post
-    //   //    ),
-    //   //  };
-    //   // return (state.posts:...state.posts, action.payload);
-    //   break;
-    // }
+    case "LIKE": {
+      console.log(action.payload);
+      return {
+        ...state,
+        posts: state.posts.map((post) =>
+          post._id === action.payload._id ? action.payload : post
+        ),
+      };
+      // return (state.posts:...state.posts, action.payload);
+    }
     default:
       return state;
   }

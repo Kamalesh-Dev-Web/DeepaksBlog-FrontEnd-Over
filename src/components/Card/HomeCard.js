@@ -27,9 +27,13 @@ const HomeCard = ({ post }) => {
   const { currentId } = useSelector((state) => state.user);
   const [currentPostId, setCurrentPostId] = useState(null);
   const [posts, setPosts] = useState(post);
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
+  console.log(user.result.email);
   console.log(posts);
   console.log(currentId);
   console.log(currentPostId);
+
+  localStorage.setItem("currentPostId", currentPostId);
 
   const openPost = (e) => {
     // dispatch(getPost(posts._id, history));
@@ -40,6 +44,8 @@ const HomeCard = ({ post }) => {
 
   const likeSinglePost = async () => {
     await dispatch(likePost(posts._id));
+    // window.location.reload();
+
     setCurrentPostId(posts._id);
 
     // console.log(received);

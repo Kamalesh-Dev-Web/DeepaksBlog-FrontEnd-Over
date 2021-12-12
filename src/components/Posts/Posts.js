@@ -11,13 +11,14 @@ const Posts = () => {
   // const dispatch = useDispatch();
   const { posts } = useSelector((state) => state?.posts);
   console.log(posts);
-  const [likeposts, setLikeposts] = useState(posts?.null);
-  console.log(likeposts);
+  // const allPosts = useSelector((state) => state?.posts.posts);
+  // const [likeposts, setLikeposts] = useState(posts);
+  // console.log(likeposts);
 
-  useEffect(() => {
-    setLikeposts(posts);
-  }, [posts]);
-  console.log(likeposts);
+  // useEffect(() => {
+  //   setLikeposts(posts);
+  // }, [likeposts]);
+  // console.log(posts);
 
   // const likeSinglePost = async () => {
   //   const received = await dispatch(likePost(posts._id));
@@ -33,7 +34,7 @@ const Posts = () => {
 
   return (
     <div className={classes.cardContainer}>
-      {likeposts?.map((post) => (
+      {posts?.map((post) => (
         <HomeCard post={post} key={post._id} />
       ))}
     </div>
