@@ -27,6 +27,7 @@ const NavBar = () => {
     try {
       dispatch({ type: "AUTH", data: { result, token } });
       history.push("/blogs");
+      window.location.reload();
     } catch (error) {
       console.log(error);
     }
@@ -40,7 +41,11 @@ const NavBar = () => {
     console.log(user);
     const token = user?.token;
     console.log(token);
-    dispatch(postToken());
+    const superUser = async () => {
+      await dispatch(postToken());
+    };
+
+    console.log(superUser);
 
     setUser(JSON.parse(localStorage.getItem("profile")));
   }, [location]);
@@ -49,6 +54,7 @@ const NavBar = () => {
     dispatch({ type: "LOGOUT" });
     history.push("/blogs");
     setUser(null);
+    window.location.reload();
   };
 
   return (
@@ -57,7 +63,14 @@ const NavBar = () => {
         <ThemeProvider theme={theme}>
           <AppBar position="static">
             <Toolbar>
-              <img src={logoImage} alt="" />
+              <img
+                src={logoImage}
+                alt=""
+                onClick={() => {
+                  history.push("/blogs");
+                }}
+                style={{ cursor: "pointer", width: "200px" }}
+              />
               <Typography
                 variant="h6"
                 className={classes.title}
@@ -66,7 +79,7 @@ const NavBar = () => {
                 }}
                 style={{ cursor: "pointer" }}
               >
-                Deepak's Blog
+                {/* Deepak's Blog */}
               </Typography>
               <h3 style={{ marginRight: "1em" }}>
                 Hi!&nbsp;{user?.result.name}

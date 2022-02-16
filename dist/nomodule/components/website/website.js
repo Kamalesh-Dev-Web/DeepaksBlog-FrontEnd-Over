@@ -1,0 +1,1 @@
+import Home from"/components/website/Home/Home.js";import React from"c:\\node_modules\\react\\index.js";var website=function website(){return React.createElement("div",null,React.createElement(Home,null))};export default website;

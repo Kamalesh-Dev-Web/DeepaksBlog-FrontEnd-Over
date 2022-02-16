@@ -28,23 +28,29 @@ const HomeCard = ({ post }) => {
   const [currentPostId, setCurrentPostId] = useState(null);
   const [posts, setPosts] = useState(post);
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
-  console.log(user.result.email);
+
+  console.log(user?.result.email);
   console.log(posts);
   console.log(currentId);
   console.log(currentPostId);
+
+  if (user?.result.email === "kamalsurea619@gmail.com") {
+    console.log("Super user is arrived");
+  }
 
   localStorage.setItem("currentPostId", currentPostId);
 
   const openPost = (e) => {
     // dispatch(getPost(posts._id, history));
-
     history.push(`/blogs/${post._id}`);
     window.location.reload();
   };
 
   const likeSinglePost = async () => {
     await dispatch(likePost(posts._id));
-    // window.location.reload();
+
+    setPosts(posts);
+    window.location.reload();
 
     setCurrentPostId(posts._id);
 
@@ -69,27 +75,29 @@ const HomeCard = ({ post }) => {
               className={classes.cardImage}
             />
             <CardContent>
-              <div className={classes.overlay2} name="edit">
-                <Button
-                  onClick={(e) => {
-                    e.stopPropagation();
+              {user?.result.email === "kamalsurea619@gmail.com" ? (
+                <div className={classes.overlay2} name="edit">
+                  <Button
+                    onClick={(e) => {
+                      e.stopPropagation();
 
-                    try {
-                      console.log(posts._id);
-                      dispatch({ type: "SET_ID", payload: posts._id });
-                      history.push("/addPost");
-                    } catch (error) {
-                      console.log(error);
-                    }
+                      try {
+                        console.log(posts._id);
+                        dispatch({ type: "SET_ID", payload: posts._id });
+                        history.push("/addPost");
+                      } catch (error) {
+                        console.log(error);
+                      }
 
-                    // setCurrentId(posts._id);
-                  }}
-                  style={{ color: "white" }}
-                  size="small"
-                >
-                  <MoreHorizIcon fontSize="default" />
-                </Button>
-              </div>
+                      // setCurrentId(posts._id);
+                    }}
+                    style={{ color: "white" }}
+                    size="small"
+                  >
+                    <MoreHorizIcon fontSize="default" />
+                  </Button>
+                </div>
+              ) : null}
 
               <Typography
                 gutterBottom
@@ -111,19 +119,20 @@ const HomeCard = ({ post }) => {
           </CardActionArea>
         </ButtonBase>
         <CardActions className={classes.cardFooter}>
-          <Button size="small" color="primary">
+          <Button size="small" color="primary" onClick={openPost}>
             Read More
           </Button>
-          <Button
-            size="small"
-            color="secondary"
-            onClick={() => dispatch(deletePost(posts._id))}
-          >
-            <DeleteIcon fontSize="small" /> &nbsp; Delete
-          </Button>
+          {user?.result.email === "kamalsurea619@gmail.com" ? (
+            <Button
+              size="small"
+              color="secondary"
+              onClick={() => dispatch(deletePost(posts._id))}
+            >
+              <DeleteIcon fontSize="small" /> &nbsp; Delete
+            </Button>
+          ) : null}
           <Button onClick={likeSinglePost}>
             <ThumbUpAltIcon fontSize="small" /> &nbsp; {posts.likes?.length}{" "}
-            likes
           </Button>
           {/* <div className={classes.like}>
             <ThumbUpAltIcon fontSize="small" style={{ marginRight: "0.3em" }} />

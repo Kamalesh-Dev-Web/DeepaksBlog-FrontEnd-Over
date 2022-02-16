@@ -24,7 +24,7 @@ const CommentSection = ({ post }) => {
   const [comment, setComment] = useState("");
   const [commentId, setCommentId] = useState(null);
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
-  console.log(user.result.email);
+  console.log(user?.result.email);
 
   const toUpdateComment = comments.find((message) => message._id === commentId);
   console.log(toUpdateComment);
@@ -131,9 +131,8 @@ const CommentSection = ({ post }) => {
 
                 <div
                   style={{
-                   
-                   display: "flex",
-                   flexDirection: "row",
+                    display: "flex",
+                    flexDirection: "row",
                   }}
                 >
                   {user.result.email === singleComment.fromUser.email ? (

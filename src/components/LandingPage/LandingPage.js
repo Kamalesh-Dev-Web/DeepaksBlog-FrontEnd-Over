@@ -1,7 +1,7 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
 import useStyles from "./styles.js";
-import LandingImage from "../../images/bio.jpg";
+import LandingImage from "../../images/depak-landing.png";
 import { useHistory } from "react-router";
 // import bookImage from "../../images/books.jpg";
 
@@ -49,7 +49,7 @@ const LandingPage = () => {
               }}
             ></div> */}
             <div className={classes.landingTextContainer}>
-              <h3 style={{marginTop: "1.5em"}}>Hi there, N.Deepak here</h3>
+              <h3 style={{ marginTop: "1.5em" }}>Hi there, N.Deepak here</h3>
               <h3>I warmly welcome you</h3>
             </div>
             <div className={classes.websiteContainer}>

@@ -50,7 +50,7 @@ const Form = () => {
       dispatch(addPost(postData, history));
       clear();
     } else {
-      dispatch(updatingPost(currentId, postData, history));
+      dispatch(updatingPost(currentId, {...postData}, history));
       clear();
     }
   };

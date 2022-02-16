@@ -26,7 +26,9 @@ export const postToken = () => async (dispatch) => {
   try {
     const { data } = await api.giveToken();
 
+
     dispatch({ type: "TOKEN", payload: data });
+    console.log(data, "hello");
   } catch (error) {
     console.log(error);
   }

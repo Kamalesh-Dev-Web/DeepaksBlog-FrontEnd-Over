@@ -1,0 +1,1 @@
+import React from"c:\\node_modules\\react\\index.js";var constructionImage="construction.jpg",Home=function Home(){return React.createElement("div",{style:{width:"100vw",height:"100vh",display:"flex",justifyContent:"center",alignItems:"center"}},React.createElement("img",{src:constructionImage,alt:"",style:{width:"40vw",height:"40vh",objectFit:"cover"}}))};export default Home;
