@@ -34,7 +34,7 @@ const HomeCard = ({ post }) => {
   console.log(currentId);
   console.log(currentPostId);
 
-  if (user?.result.email === "kamalsurea619@gmail.com") {
+  if (user?.result.email === "authorndeepak@gmail.com") {
     console.log("Super user is arrived");
   }
 
@@ -75,7 +75,7 @@ const HomeCard = ({ post }) => {
               className={classes.cardImage}
             />
             <CardContent>
-              {user?.result.email === "kamalsurea619@gmail.com" ? (
+              {user?.result.email === "authorndeepak@gmail.com" ? (
                 <div className={classes.overlay2} name="edit">
                   <Button
                     onClick={(e) => {
@@ -122,7 +122,7 @@ const HomeCard = ({ post }) => {
           <Button size="small" color="primary" onClick={openPost}>
             Read More
           </Button>
-          {user?.result.email === "kamalsurea619@gmail.com" ? (
+          {user?.result.email === "authorndeepak@gmail.com" ? (
             <Button
               size="small"
               color="secondary"

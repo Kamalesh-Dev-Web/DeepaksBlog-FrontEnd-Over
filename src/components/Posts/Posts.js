@@ -33,11 +33,14 @@ const Posts = () => {
   // const posts = postArrayDummy;
 
   return (
-    <div className={classes.cardContainer}>
-      {posts?.map((post) => (
-        <HomeCard post={post} key={post._id} />
-      ))}
-    </div>
+    <>
+      <div className={classes.cardContainer}>
+        {posts?.map((post) => (
+          <HomeCard post={post} key={post._id} />
+        ))}
+      </div>
+     
+    </>
   );
 };
 

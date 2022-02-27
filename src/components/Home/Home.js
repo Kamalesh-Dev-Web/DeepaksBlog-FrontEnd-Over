@@ -9,6 +9,7 @@ import twitterImage from "../../images/twitter-512.png";
 import NavBar from "../NavBar/NavBar.js";
 import Posts from "../Posts/Posts";
 import { NavLink } from "react-router-dom";
+import Footer from "../footer/footer";
 
 const Home = () => {
   const classes = useStyles();
@@ -31,7 +32,15 @@ const Home = () => {
                   investigate reality and uncover it to humanity. Also, this
                   blog web page will voice out with regards to Entertainment,
                   sports, legislative issues, and issues of mistreatment.{" "}
-                  <button className={classes.websiteLink}>
+                  <button
+                    className={classes.websiteLink}
+                    onClick={() =>
+                      window.open(
+                        "https://authorndeepakwebsite.netlify.app/",
+                        "_blank"
+                      )
+                    }
+                  >
                     check out my website
                   </button>
                 </p>
@@ -67,6 +76,7 @@ const Home = () => {
                     />
                   </a>
                 </div>
+                <Footer />
               </div>
             </Paper>
           </Grid>

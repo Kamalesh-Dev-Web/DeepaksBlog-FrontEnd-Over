@@ -58,9 +58,12 @@ const LandingPage = () => {
               </h3>
               <button
                 className={classes.landingButton}
-                onClick={() => {
-                  history.push("/website");
-                }}
+                onClick={() =>
+                  window.open(
+                    "https://authorndeepakwebsite.netlify.app/",
+                    "_blank"
+                  )
+                }
               >
                 My Website
               </button>
