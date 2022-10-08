@@ -93,7 +93,7 @@ const NavBar = () => {
               )}
               {!user && (
                 <GoogleLogin
-                  clientId="771470238529-sj11s31cdmlk419k7q8n9drc4q1thrfr.apps.googleusercontent.com"
+                  clientId="956198539346-alqai90nkiecmbql1efjb3rlbu6eies3.apps.googleusercontent.com"
                   render={(renderProps) => (
                     <div
                       className={classes.buttonContainer}
